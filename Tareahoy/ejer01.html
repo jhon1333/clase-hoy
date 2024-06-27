@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleta de Venta</title>
+    <link rel="stylesheet" href="ejer01.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src="img/persona.jpg" alt="" class="centrada-y-achicada">
+
+    <h1>Boleta de Venta</h1>
+    <table>
+        <tr>
+            <td>Producto</td>
+            <td>
+                <select name="" id="txtPro" onchange="Mostrar();">
+                    <option value="1">Arroz costeño</option>
+                    <option value="2">Azucar faraon</option>
+                    <option value="3">Chocolate Donofrio</option>
+                    <option value="4">Aceite primor premiun</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Precio S/ </td>
+            <td>
+                <input type="text" id="txtPre" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>Cantidad</td>
+            <td>
+                <input type="number" id="txtCant" >
+            </td>
+        </tr>
+        <tr>
+            <td>Descuento %</td>
+            <td>
+                <input type="number" id="txtDes" >
+            </td>
+        </tr>
+        <tr>
+            <td>Importe S/</td>
+            <td>
+                <input type="text" id="txtImpor" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>Importe US</td>
+            <td>
+                <input type="text" id="txtImporUS" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="calcular();">Calcular</button></td>
+            <td><button onclick="limpiar();">Limpiar</button></td>
+        </tr>
+        <tr>
+            <td>Imagen</td>
+            <td>
+                <img src="" alt="" id="zapa">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function limpiar(){
+            document.getElementById("txtPre").value = "";
+            document.getElementById("txtCant").value = "";
+            document.getElementById("txtDes").value = "";
+            document.getElementById("txtImpor").value = "";
+            document.getElementById("txtImporUS").value = "";
+            document.getElementById("zapa").src = "";
+        }
+
+        function calcular(){
+            let precio = parseFloat(document.getElementById("txtPre").value);
+            let cantidad = parseFloat(document.getElementById("txtCant").value);
+            let descuento = parseFloat(document.getElementById("txtDes").value);
+
+            if (isNaN(precio) || isNaN(cantidad) || cantidad <= 0) {
+                alert("Por favor, ingrese un precio válido y una cantidad mayor a 0.");
+                return;
+            }
+
+            let importe = cantidad * precio * (1 - descuento / 100);
+            document.getElementById("txtImpor").value = importe.toFixed(2);
+
+            let tipoCambio = 3.8;
+            let importeUS = importe / tipoCambio;
+            document.getElementById("txtImporUS").value = importeUS.toFixed(2);
+        }
+
+        function Mostrar(){
+            let producto = document.getElementById("txtPro").value;
+            let precio = 0;
+            let imagen = "";
+
+            switch(producto){
+                case "1":
+                    precio = 4.50;
+                    imagen = "img/e1.png";
+                    break;
+                case "2":
+                    precio = 6.20;
+                    imagen = "img/e2.jpg";
+                    break;
+                case "3":
+                    precio = 1.20;
+                    imagen = "img/e3.png";
+                    break;
+                case "4":
+                    precio = 12.50;
+                    imagen = "img/e4.jpg";
+                    break;
+            }
+
+            document.getElementById("txtPre").value = precio.toFixed(2);
+            document.getElementById("zapa").src = imagen;
+        }
+    </script>
+</body>
+</html>

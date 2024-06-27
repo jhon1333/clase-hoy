@@ -1,0 +1,41 @@
+body{
+    background-color: #44318D;
+    font-family: Montserrat;
+    text-align: center;
+}
+
+
+
+.centrada-y-achicada {
+    display: block; /* Para asegurar que los márgenes automáticos funcionen correctamente */
+    margin: auto; /* Centra la imagen horizontalmente */
+    max-width: 100%; /* Limita el tamaño máximo de la imagen al ancho del contenedor */
+    height: auto; /* Permite que la altura se ajuste proporcionalmente al ancho */
+    max-height: 400px; /* Establece una altura máxima para la imagen */
+    border-radius: 40px;
+    }
+
+    th{
+        margin: auto;
+        text-align: center;
+    }
+    th{
+        text-align: center;
+        margin: auto;
+        font-style: oblique;
+    }
+
+table{
+    text-align: center;
+    margin: 0 auto;
+    text-size-adjust: 90px;
+}
+
+tr{
+    font-size: 30px;
+}
+
+button{
+    font-size: 20px;
+    border-radius: 40px;
+}

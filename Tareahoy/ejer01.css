@@ -1,0 +1,29 @@
+body{
+    background-color: #2789e6;
+    font-family: Montserrat;
+    text-align: center;
+}
+
+
+
+.centrada-y-achicada {
+    display: block; /* Para asegurar que los márgenes automáticos funcionen correctamente */
+    margin: auto; /* Centra la imagen horizontalmente */
+    max-width: 100%; /* Limita el tamaño máximo de la imagen al ancho del contenedor */
+    height: auto; /* Permite que la altura se ajuste proporcionalmente al ancho */
+    max-height: 400px; /* Establece una altura máxima para la imagen */
+    border-radius: 40px;
+    }
+
+th{
+    margin: auto;
+    text-align: center;
+}
+
+table{
+    text-align: center;
+    margin: auto;
+}
+image{
+    border-radius: 40px;
+}

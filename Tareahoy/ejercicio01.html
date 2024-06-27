@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura Condicional</title>
+    <link rel="stylesheet" href="ejercicio01.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+
+    <script>
+        function limpiar() {
+            document.getElementById("txtnumero").value = "";
+            document.getElementById("txtresultado").value = "";
+        }
+
+        function calcular() {
+            // Obtener el número ingresado
+            var numero = document.getElementById("txtnumero").value;
+            // Convertir a número
+            numero = parseFloat(numero);
+
+            // Verificar si es positivo, negativo o cero
+            if (numero > 0) {
+                document.getElementById("txtresultado").value = "Positivo";
+            } else if (numero < 0) {
+                document.getElementById("txtresultado").value = "Negativo";
+            } else {
+                document.getElementById("txtresultado").value = "Cero";
+            }
+        }
+    </script>
+
+
+
+</head>
+<body>
+    <img src="img/persona.jpg" alt="" class="centrada-y-achicada">
+
+
+    <table>
+        <th>EVALUAR NUMERO</th>
+
+        <tr>
+            <td>Numero</td>
+            <td><input type="text" id="txtnumero"></td>
+        </tr>
+
+        <tr>
+            <td>Resultado</td>
+            <td><input type="text" id="txtresultado" disabled></td>
+        </tr>
+        <tr>
+            <td><button onclick="calcular();">Calcular</button></td>
+            <td><button onclick="limpiar();">Limpiar</button></td>
+
+        </tr>
+    </table>
+</body>
+</html>
